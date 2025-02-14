@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <!-- <a href="{{ url_for('add') }}">Add Image</a> -->
+    <div>
+        {% for item in images %}
+            <div>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                <img src="{{ url_for('static', filename='uploads/' + item.filename) }}" alt="{{ item.title }}" width="300">
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
